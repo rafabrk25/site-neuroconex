@@ -53,8 +53,10 @@ if (form) {
             mode: "no-cors", // Necessário para contornar CORS no Google Forms
         })
         .then(() => {
-            // Após envio bem-sucedido, redirecionar o usuário para a seção inicial
-            window.location.href = "#lar"; // Substitua "#lar" pelo ID desejado
+            // Redirecionar para o WhatsApp com mensagem personalizada
+            const telefone = '5575920006296'; // Número de WhatsApp (sem espaços, parênteses ou traços)
+            const mensagem = 'Oi, eu vi o seu site e estou interessado nas soluções para negócios!'; // Mensagem personalizada
+            window.location.href = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
         })
         .catch((error) => {
             console.error("Erro ao enviar o formulário:", error);
